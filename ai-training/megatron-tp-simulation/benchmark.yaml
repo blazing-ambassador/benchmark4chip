@@ -1,0 +1,17 @@
+id: megatron-tp-simulation
+name: Megatron 超大模型张量并行模拟
+category: ai-training
+summary: 多芯片互联
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - MCM 多芯片封装高速接口带宽
+  - AllReduce/AllGather 规约延迟
+  - 多 die NOC 拓扑效率
+  - 参数分片流水并行能力
+  - 跨芯片同步开销
+tags:
+  - chip-benchmark
+  - architecture-validation

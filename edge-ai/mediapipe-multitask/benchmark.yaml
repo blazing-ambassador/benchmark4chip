@@ -1,0 +1,16 @@
+id: mediapipe-multitask
+name: MediaPipe 多任务串行推理
+category: edge-ai
+summary: 多模型调度开销
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 模型快速切换上下文保存/恢复开销
+  - 流水线任务硬件调度器
+  - 多算子串行流水吞吐
+  - 功耗动态调节能力
+tags:
+  - chip-benchmark
+  - architecture-validation

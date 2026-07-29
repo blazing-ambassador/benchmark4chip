@@ -1,0 +1,17 @@
+id: llama-7b-decode
+name: LLaMA-7B 增量解码推理
+category: ai-inference
+summary: KV 缓存复用、自注意力增量计算
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 片上高速缓存对 KV Cache 驻留能力
+  - 动态序列长度算力弹性
+  - 解码时延/首包响应延迟
+  - 批量推理调度单元
+  - 权重带宽瓶颈
+tags:
+  - chip-benchmark
+  - architecture-validation

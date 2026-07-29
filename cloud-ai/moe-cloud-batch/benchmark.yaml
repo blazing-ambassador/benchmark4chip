@@ -1,0 +1,16 @@
+id: moe-cloud-batch
+name: MoE 稀疏专家云端批量推理
+category: cloud-ai
+summary: 动态路由负载不均衡访存
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 稀疏 Token 动态分发硬件单元
+  - 专家核算力动态调度
+  - 不规则访存带宽冲突规避
+  - 批量任务负载打散能力
+tags:
+  - chip-benchmark
+  - architecture-validation

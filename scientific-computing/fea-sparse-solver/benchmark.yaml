@@ -1,0 +1,16 @@
+id: fea-sparse-solver
+name: FEA 有限元稀疏矩阵求解
+category: scientific-computing
+summary: SpMV 稀疏张量运算
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - SpMV 稀疏矩阵乘法专用单元
+  - 不规则稀疏存储遍历效率
+  - 非零元素索引硬件寻址
+  - 带宽受限下算力衰减
+tags:
+  - chip-benchmark
+  - architecture-validation

@@ -1,0 +1,17 @@
+id: sd-unet-training
+name: Stable Diffusion UNet 完整训练
+category: ai-training
+summary: 卷积 + 循环迭代细碎算子
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 小尺寸卷积算子执行效率
+  - 算子调度流水线开销
+  - 残差分支数据流复用
+  - 大量小 Tensor 频繁访存
+  - 低精度数值稳定性
+tags:
+  - chip-benchmark
+  - architecture-validation

@@ -1,0 +1,16 @@
+id: yolov8-nano
+name: YOLOv8-Nano 实时检测推理
+category: edge-ai
+summary: 轻量化卷积 + 后处理 NPU 算子
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 深度可分离卷积硬件效率
+  - NMS/置信度筛选后处理硬加速
+  - 低功耗模式算力输出
+  - 片内小容量 SRAM 利用率
+tags:
+  - chip-benchmark
+  - architecture-validation

@@ -1,0 +1,16 @@
+id: sd-unet-sampling
+name: SD UNet 迭代采样推理
+category: ai-inference
+summary: 多步前向细碎卷积算子负载
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 循环多次推理算子启动开销
+  - 卷积脉动阵列利用率
+  - 中间张量片上缓存复用
+  - 功耗与时延折中表现
+tags:
+  - chip-benchmark
+  - architecture-validation

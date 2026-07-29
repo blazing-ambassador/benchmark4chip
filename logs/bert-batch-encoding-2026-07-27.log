@@ -1,0 +1,32 @@
+# bert-batch-encoding 实现日志
+# 日期: 2026-07-27
+
+## 任务
+实现 ai-inference/bert-batch-encoding 极简可运行 benchmark，采集四项架构指标。
+
+## 实现内容
+- src/model.py: MiniBertEncoder（2-layer Transformer, mean pool）
+- src/metrics.py: 四项指标计算与饱和拐点检测
+- src/run.py: batch / seq_len / concurrency sweep，输出 JSON 报告
+- requirements.txt: torch>=2.0.0（实测兼容 torch 1.13 + Python 3.7）
+
+## 指标定义
+1. batch_parallel_utilization = (throughput@B/B) / throughput@1
+2. short_seq_scheduling_efficiency = achieved_FLOPs / (peak_FLOPs × latency)
+3. compute_overflow_threshold: batch/concurrency sweep 边际增益 < 5% 的拐点
+4. onchip_cache_batch_throughput_gbps = estimated_bytes / latency
+
+## 验证运行
+```powershell
+cd ai-inference/bert-batch-encoding/src
+python run.py --iterations 5 --warmup 2 --batch-sizes 1 2 4 8 16 --concurrency-levels 1 2 4
+```
+
+## 结果
+- 状态: 成功
+- 示例输出 (CPU):
+  - peak batch parallel utilization: 80.88%
+  - peak short-seq scheduling efficiency: 27.09%
+  - overflow threshold batch: 8, concurrency: 4
+  - peak on-chip throughput: 14.054 GB/s
+- 报告: results/benchmark_report.json

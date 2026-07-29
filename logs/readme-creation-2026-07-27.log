@@ -1,0 +1,12 @@
+# README.md 创建任务日志
+# 日期: 2026-07-27
+
+## 任务描述
+用户在根目录下新建一个 .md 文件。
+
+## 执行操作
+创建文件: e:\project\benchmark4chip\README.md
+内容: 项目简介及五个子目录说明（ai-training、ai-inference、edge-ai、cloud-ai、scientific-computing）
+
+## 执行结果
+- 状态: 成功

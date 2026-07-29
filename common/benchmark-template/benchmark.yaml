@@ -1,0 +1,14 @@
+id: <benchmark-id>
+name: <Benchmark Name>
+category: <category>
+summary: <One-line summary>
+status: planned
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - <metric 1>
+  - <metric 2>
+tags:
+  - chip-benchmark
+  - architecture-validation

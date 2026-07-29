@@ -1,0 +1,15 @@
+id: distilbert-edge
+name: DistilBERT 端侧小 LLM 推理
+category: edge-ai
+summary: 片上存储极限约束测试
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 权重压缩后片上 Flash 加载速度
+  - 极小缓存下 Attention 分块计算
+  - 内存带宽受限场景算力衰减率
+tags:
+  - chip-benchmark
+  - architecture-validation

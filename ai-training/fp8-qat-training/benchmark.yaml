@@ -1,0 +1,17 @@
+id: fp8-qat-training
+name: FP8 QAT 量化感知训练
+category: ai-training
+summary: 混合精度硬件适配
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - FP8 训练原生算力
+  - 量化/伪量化算子硬加速
+  - 浮点与低精度数据流切换开销
+  - 量化误差硬件数值保真度
+  - 混合精度存储带宽利用率
+tags:
+  - chip-benchmark
+  - architecture-validation

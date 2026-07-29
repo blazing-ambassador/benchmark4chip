@@ -1,0 +1,16 @@
+id: bert-batch-encoding
+name: BERT 批量向量编码推理
+category: ai-inference
+summary: 小 Transformer 高并发吞吐压力
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 批量并行计算单元利用率
+  - 短序列算子调度效率
+  - 高并发下算力溢出阈值
+  - 片上缓存批量数据吞吐
+tags:
+  - chip-benchmark
+  - architecture-validation

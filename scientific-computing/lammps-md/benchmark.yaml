@@ -1,0 +1,16 @@
+id: lammps-md
+name: LAMMPS 分子动力学仿真
+category: scientific-computing
+summary: 不规则随机内存访问
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 随机散列访存架构效率
+  - 粒子力场计算并行度
+  - 非连续地址访问缓存命中率
+  - 大数组寻址延迟
+tags:
+  - chip-benchmark
+  - architecture-validation

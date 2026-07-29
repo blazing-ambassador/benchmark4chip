@@ -1,0 +1,16 @@
+id: clip-distributed
+name: CLIP 海量图片分布式特征抽取
+category: cloud-ai
+summary: IO + 算力满负载跑批
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - PCIe/主机 DMA 带宽上限
+  - 批量图像预处理硬加速
+  - 算力持续满载稳定性
+  - DRAM 持续读写带宽
+tags:
+  - chip-benchmark
+  - architecture-validation

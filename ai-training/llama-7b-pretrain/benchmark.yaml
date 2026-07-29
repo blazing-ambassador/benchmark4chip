@@ -1,0 +1,18 @@
+id: llama-7b-pretrain
+name: LLaMA-7B 稠密预训练
+category: ai-training
+summary: 通用 LLM 稠密算力 + 并行通信
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - BF16/FP16 张量算力利用率
+  - 片上 SRAM 缓存命中率
+  - 激活重计算显存开销
+  - 多卡 TP/PP 集体通信带宽
+  - NOC 片上网络吞吐
+  - 显存带宽饱和能力
+tags:
+  - chip-benchmark
+  - architecture-validation

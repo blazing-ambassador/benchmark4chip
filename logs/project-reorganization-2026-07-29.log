@@ -1,0 +1,31 @@
+# 项目规整与 README 重写日志
+# 日期: 2026-07-29
+
+## 任务
+检查并规整 Benchmark4Chip 仓库，重写根目录 README，统一工程结构说明。
+
+## 主要变更
+
+### 文档
+- 重写 README.md：Motivation、五类概览、快速开始、目录规范、指标方法论、芯片接入、脚本索引、实现状态
+- overview.md：增加与 README 互链，保留完整 30 项负载原文
+- 新增 scripts/README.md、logs/README.md
+- 更新 common/benchmark-template 与 ai-inference/README.md 公共模块链接
+
+### 工程结构
+-  canonical 公共模块：common/bench_utils.py（全仓库统一）
+- 新增 scripts/normalize_project.py：run.py 使用 parents[3]/common，删除分类目录下冗余 bench_utils
+- 新增 scripts/run_smoke_all.py：五类冒烟（已修复 cwd）
+- 新增 .gitignore（__pycache__、results/*.json 等）
+- generate_four_categories.py 不再覆盖根 README；category README 指向 ../../common/
+
+### 修复
+- 修复 category_archetypes.py 中 _run_header 被误改导致的语法破坏
+- 恢复 overview.md 完整正文
+
+## 验证
+python scripts/normalize_project.py  -> Patched run.py: 29
+python scripts/run_smoke_all.py      -> All smoke tests passed
+
+## 状态
+成功

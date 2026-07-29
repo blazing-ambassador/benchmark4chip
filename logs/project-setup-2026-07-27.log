@@ -1,0 +1,98 @@
+# 工程搭建任务日志
+# 日期: 2026-07-27
+# 任务: 根据 overview.md + README.md motivation 完成工程搭建
+
+## 任务描述
+用户要求根据 overview.md 中的 benchmark 清单，结合 README.md 的 motivation，完成 benchmark4chip 工程搭建，并将对应算法放入相应文件夹。
+
+## 执行操作
+
+### 1. 更新根目录 README.md
+- 整合 motivation（MLPerf 短板与本工程目标）
+- 补充 benchmark 组织方式说明
+- 链接 overview.md 作为完整负载清单
+
+### 2. 创建 5 个分类目录及分类 README
+- ai-training（6 个 benchmark）
+- ai-inference（6 个 benchmark）
+- edge-ai（6 个 benchmark）
+- cloud-ai（6 个 benchmark）
+- scientific-computing（6 个 benchmark）
+
+### 3. 创建 30 个 benchmark 子目录
+每个 benchmark 包含：
+- README.md：算法说明、硬件考察维度、运行状态 checklist
+- benchmark.yaml：结构化元数据（id、metrics、status）
+- src/：算法实现占位目录
+
+### 4. 公共模板与生成脚本
+- common/benchmark-template/：新增 benchmark 模板
+- scripts/generate_benchmarks.py：从 overview 定义批量生成 scaffold
+
+## Benchmark 映射表
+
+### ai-training
+| 目录 | 算法 |
+|------|------|
+| llama-7b-pretrain | LLaMA-7B 稠密预训练 |
+| moe-training | MoE 混合专家模型训练 |
+| sd-unet-training | Stable Diffusion UNet 完整训练 |
+| vit-mae-training | ViT-MAE 视觉自监督训练 |
+| megatron-tp-simulation | Megatron 超大模型张量并行模拟 |
+| fp8-qat-training | FP8 QAT 量化感知训练 |
+
+### ai-inference
+| 目录 | 算法 |
+|------|------|
+| llama-7b-decode | LLaMA-7B 增量解码推理 |
+| llava-multimodal | Llava 多模态图文联合推理 |
+| sd-unet-sampling | SD UNet 迭代采样推理 |
+| whisper-streaming | Whisper 流式长音频推理 |
+| int8-fp8-quant-inference | INT8/FP8 量化推理 |
+| bert-batch-encoding | BERT 批量向量编码推理 |
+
+### edge-ai
+| 目录 | 算法 |
+|------|------|
+| yolov8-nano | YOLOv8-Nano 实时检测推理 |
+| mobilenetv3 | MobileNetV3 分类推理 |
+| distilbert-edge | DistilBERT 端侧小 LLM 推理 |
+| qwen-int4 | Qwen-1.8B INT4 量化离线推理 |
+| mediapipe-multitask | MediaPipe 多任务串行推理 |
+| lightweight-mae | 轻量化 MAE 视觉提取推理 |
+
+### cloud-ai
+| 目录 | 算法 |
+|------|------|
+| distributed-tp-inference | 大模型分布式张量并行推理 |
+| moe-cloud-batch | MoE 稀疏专家云端批量推理 |
+| multi-model-tenant | 多模型混部租户压测 |
+| clip-distributed | CLIP 海量图片分布式特征抽取 |
+| embedding-concurrent | Embedding 高并发向量推理 |
+| train-infer-fp8-e2e | 训推一体 FP8 全链路负载 |
+
+### scientific-computing
+| 目录 | 算法 |
+|------|------|
+| openfoam-cfd | OpenFOAM CFD 流体求解 |
+| lammps-md | LAMMPS 分子动力学仿真 |
+| npb-hpc | NPB 并行 HPC 基准 |
+| 3d-fft | 3D-FFT 大规模傅里叶变换 |
+| fea-sparse-solver | FEA 有限元稀疏矩阵求解 |
+| climate-model | 大气环流气候模式迭代计算 |
+
+## 执行命令
+```powershell
+python e:\project\benchmark4chip\scripts\generate_benchmarks.py
+```
+
+## 执行结果
+- 状态: 成功
+- 退出码: 0
+- 输出: Generated 30 benchmarks in 5 categories.
+- 说明: 当前为工程 scaffold（目录结构 + 文档 + 元数据），算法实现待在各自 src/ 下补充
+
+## 后续建议
+1. 在各 benchmark 的 src/ 下接入具体框架实现（PyTorch、OpenFOAM 等）
+2. 统一指标采集与报告输出格式
+3. 按 priority 逐步实现 planned → implemented 状态流转

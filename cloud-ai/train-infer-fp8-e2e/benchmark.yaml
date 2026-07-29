@@ -1,0 +1,15 @@
+id: train-infer-fp8-e2e
+name: 训推一体 FP8 全链路负载
+category: cloud-ai
+summary: 混合精度端到端硬件适配
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - FP8 训推统一数据通路
+  - 训练量化→推理加载无缝流转
+  - 混合精度存储带宽综合利用率
+tags:
+  - chip-benchmark
+  - architecture-validation

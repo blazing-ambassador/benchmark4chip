@@ -1,0 +1,16 @@
+id: multi-model-tenant
+name: 多模型混部租户压测
+category: cloud-ai
+summary: 算力调度与资源隔离开销
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 硬件资源虚拟化隔离
+  - 算力切片抢占调度
+  - 缓存分区保护
+  - 多任务 QoS 时延保障能力
+tags:
+  - chip-benchmark
+  - architecture-validation

@@ -1,0 +1,18 @@
+id: moe-training
+name: MoE 混合专家模型训练
+category: ai-training
+summary: 稀疏动态算力
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 动态不规则张量寻址
+  - 路由算子硬件加速
+  - 动态显存分配效率
+  - 专家负载均衡调度能力
+  - 稀疏矩阵计算单元效能
+  - 跨专家数据搬运带宽
+tags:
+  - chip-benchmark
+  - architecture-validation

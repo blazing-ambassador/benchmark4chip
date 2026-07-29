@@ -1,0 +1,16 @@
+id: llava-multimodal
+name: Llava 多模态图文联合推理
+category: ai-inference
+summary: 视觉编码器 + LLM 异构流水线
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 异构算子流水线并行执行能力
+  - 多模型数据流无缝切换
+  - 特征投影张量传输开销
+  - 多任务资源隔离机制
+tags:
+  - chip-benchmark
+  - architecture-validation

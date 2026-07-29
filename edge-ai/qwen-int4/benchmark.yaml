@@ -1,0 +1,16 @@
+id: qwen-int4
+name: Qwen-1.8B INT4 量化离线推理
+category: edge-ai
+summary: 权重压缩与带宽瓶颈
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - INT4 解压硬件单元
+  - 4bit 权重访存带宽压力
+  - 片上缓存分块加载策略
+  - 低比特数值计算稳定性
+tags:
+  - chip-benchmark
+  - architecture-validation

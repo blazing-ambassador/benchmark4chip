@@ -1,0 +1,16 @@
+id: distributed-tp-inference
+name: 大模型分布式张量并行推理
+category: cloud-ai
+summary: MCM 多芯片互联与规约通信
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 多 die 高速互联带宽
+  - 推理阶段 AllReduce 规约延迟
+  - 片间 NOC 拥塞控制
+  - 多芯片负载均衡调度
+tags:
+  - chip-benchmark
+  - architecture-validation

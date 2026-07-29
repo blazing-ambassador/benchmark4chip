@@ -1,0 +1,37 @@
+# ai-inference 剩余 benchmark 实现日志
+# 日期: 2026-07-27
+
+## 任务
+按 bert-batch-encoding 标准，完成 ai-inference 目录下剩余 5 个 benchmark 的极简可运行实现。
+
+## 已完成 benchmark
+1. llama-7b-decode
+2. llava-multimodal
+3. sd-unet-sampling
+4. whisper-streaming
+5. int8-fp8-quant-inference
+
+（bert-batch-encoding 此前已完成）
+
+## 统一结构
+每个 benchmark 包含：
+- src/model.py, src/metrics.py, src/run.py
+- requirements.txt (torch>=1.9.0)
+- results/benchmark_report.json
+- README.md + benchmark.yaml (status: implemented)
+
+## 公共模块
+- ai-inference/common/bench_utils.py
+
+## 验证命令
+```powershell
+python ai-inference/llama-7b-decode/src/run.py --iterations 2 --warmup 1
+python ai-inference/llava-multimodal/src/run.py --iterations 2 --warmup 1
+python ai-inference/sd-unet-sampling/src/run.py --iterations 2 --warmup 1
+python ai-inference/whisper-streaming/src/run.py --iterations 2 --warmup 1
+python ai-inference/int8-fp8-quant-inference/src/run.py --iterations 2 --warmup 1
+```
+
+## 结果
+- 状态: 成功
+- ai-inference 下 6 个 benchmark 均可运行并输出 JSON 报告

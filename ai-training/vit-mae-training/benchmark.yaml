@@ -1,0 +1,17 @@
+id: vit-mae-training
+name: ViT-MAE 视觉自监督训练
+category: ai-training
+summary: 纯视觉 Transformer
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 长序列注意力矩阵乘算力
+  - Patch 张量重排开销
+  - 大维度张量片内搬运
+  - 归一化层硬件加速
+  - 高带宽 DRAM 吞吐
+tags:
+  - chip-benchmark
+  - architecture-validation

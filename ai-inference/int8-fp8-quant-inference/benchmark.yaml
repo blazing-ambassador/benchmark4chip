@@ -1,0 +1,16 @@
+id: int8-fp8-quant-inference
+name: INT8/FP8 量化推理
+category: ai-inference
+summary: 低精度算子与数值稳定性验证
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - INT8/FP8 推理算力峰值
+  - 量化反量化硬件开销
+  - 零值点偏移运算单元
+  - 低精度下精度误差容错能力
+tags:
+  - chip-benchmark
+  - architecture-validation

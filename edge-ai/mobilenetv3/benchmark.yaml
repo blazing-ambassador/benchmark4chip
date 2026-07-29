@@ -1,0 +1,16 @@
+id: mobilenetv3
+name: MobileNetV3 分类推理
+category: edge-ai
+summary: 深度可分离卷积低带宽负载
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 卷积数据流寄存器复用
+  - 访存带宽节约架构
+  - 极低功耗下有效算力
+  - MCU 级窄内存接口适配能力
+tags:
+  - chip-benchmark
+  - architecture-validation

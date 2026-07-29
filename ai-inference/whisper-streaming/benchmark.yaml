@@ -1,0 +1,16 @@
+id: whisper-streaming
+name: Whisper 流式长音频推理
+category: ai-inference
+summary: 时序滑动窗口超长序列计算
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 滑动窗口张量分段处理能力
+  - 超长上下文显存占用控制
+  - 时序类 Attention 硬件延迟
+  - 流式数据 IO 吞吐
+tags:
+  - chip-benchmark
+  - architecture-validation

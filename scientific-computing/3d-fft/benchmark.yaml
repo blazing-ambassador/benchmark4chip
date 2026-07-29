@@ -1,0 +1,16 @@
+id: 3d-fft
+name: 3D-FFT 大规模傅里叶变换
+category: scientific-computing
+summary: 内存带宽极限压榨
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 多维张量转置硬件开销
+  - 跨步访存带宽利用率
+  - FFT 蝶形运算单元加速
+  - 大尺寸数组缓存分块能力
+tags:
+  - chip-benchmark
+  - architecture-validation

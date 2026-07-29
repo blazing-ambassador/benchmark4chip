@@ -1,0 +1,80 @@
+# four-categories 实现日志
+# 日期: 2026-07-29
+
+## 任务
+实现 scripts/category_archetypes.py 与 scripts/generate_four_categories.py，
+为 ai-training、edge-ai、cloud-ai、scientific-computing 共 24 个 benchmark 生成可运行负载
+（标准对齐 ai-inference/bert-batch-encoding）。
+
+## 脚本
+- scripts/setup_category_common.py — 复制 ai-inference/common/bench_utils.py 至四类 common/
+- scripts/category_archetypes.py — 24 种 archetype（model/metrics/run 模板）
+- scripts/generate_four_categories.py — 写入 src/、requirements.txt、README、benchmark.yaml，更新分类与根 README
+
+## 生成物（每个 benchmark）
+- src/model.py, src/metrics.py, src/run.py
+- requirements.txt (torch>=1.9.0)
+- benchmark.yaml (status: implemented, entrypoint/output)
+- README.md（运行状态已勾选负载/指标）
+- results/benchmark_report.json（运行后生成）
+
+## 分类 benchmark 清单
+
+### ai-training (6)
+- llama-7b-pretrain
+- moe-training
+- sd-unet-training
+- vit-mae-training
+- megatron-tp-simulation
+- fp8-qat-training
+
+### edge-ai (6)
+- yolov8-nano
+- mobilenetv3
+- distilbert-edge
+- qwen-int4
+- mediapipe-multitask
+- lightweight-mae
+
+### cloud-ai (6)
+- distributed-tp-inference
+- moe-cloud-batch
+- multi-model-tenant
+- clip-distributed
+- embedding-concurrent
+- train-infer-fp8-e2e
+
+### scientific-computing (6)
+- openfoam-cfd
+- lammps-md
+- npb-hpc
+- 3d-fft
+- fea-sparse-solver
+- climate-model
+
+## 公共模块
+- ai-training/common/bench_utils.py
+- edge-ai/common/bench_utils.py
+- cloud-ai/common/bench_utils.py
+- scientific-computing/common/bench_utils.py
+
+## 验证命令
+
+### 每类 smoke（--iterations 2 --warmup 1）
+```powershell
+python ai-training/llama-7b-pretrain/src/run.py --iterations 2 --warmup 1
+python edge-ai/yolov8-nano/src/run.py --iterations 2 --warmup 1
+python cloud-ai/distributed-tp-inference/src/run.py --iterations 2 --warmup 1
+python scientific-computing/openfoam-cfd/src/run.py --iterations 2 --warmup 1
+```
+
+### 全量 24 个（同上参数）
+```powershell
+# 2026-07-29 执行结果: OK 24, FAILED 0
+```
+
+## 结果
+- setup_category_common.py: 成功
+- generate_four_categories.py: 成功（24 benchmarks）
+- Smoke（4 类各 1）: 成功
+- 全量 24 运行: 成功，均输出 results/benchmark_report.json

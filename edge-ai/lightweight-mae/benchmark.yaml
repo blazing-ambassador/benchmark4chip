@@ -1,0 +1,15 @@
+id: lightweight-mae
+name: 轻量化 MAE 视觉提取推理
+category: edge-ai
+summary: 端侧视觉特征低功耗负载
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 低帧率算力节流控制
+  - 图像 Patch 预处理硬件加速
+  - 休眠/运行功耗切换表现
+tags:
+  - chip-benchmark
+  - architecture-validation

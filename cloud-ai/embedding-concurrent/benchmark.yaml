@@ -1,0 +1,16 @@
+id: embedding-concurrent
+name: Embedding 高并发向量推理
+category: cloud-ai
+summary: 网络吞吐与批量调度压力
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 超大 Batch 并行算力
+  - 向量归一化硬件加速
+  - 网卡直连张量传输开销
+  - 并发请求队列硬件调度器
+tags:
+  - chip-benchmark
+  - architecture-validation

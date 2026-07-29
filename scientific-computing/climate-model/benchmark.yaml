@@ -1,0 +1,16 @@
+id: climate-model
+name: 大气环流气候模式迭代计算
+category: scientific-computing
+summary: 大数组持续访存压力
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 超大型数组流式读写带宽
+  - 长时间步迭代算力稳定性
+  - 循环变量寄存器复用
+  - 大容量 DRAM 吞吐上限
+tags:
+  - chip-benchmark
+  - architecture-validation

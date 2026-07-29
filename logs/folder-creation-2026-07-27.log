@@ -1,0 +1,39 @@
+# 文件夹创建任务日志
+# 日期: 2026-07-27
+# 任务: 新建五个英文命名文件夹
+
+## 任务描述
+用户要求在项目根目录下创建五个文件夹，分别对应：
+- AI训练
+- AI推理
+- 端侧AI
+- 云侧AI
+- 科学计算
+
+## 执行操作
+在项目根目录 `e:\project\benchmark4chip\` 下创建以下文件夹：
+
+| 中文名称   | 英文文件夹名           | 路径                                              |
+|-----------|------------------------|---------------------------------------------------|
+| AI训练    | ai-training            | e:\project\benchmark4chip\ai-training             |
+| AI推理    | ai-inference           | e:\project\benchmark4chip\ai-inference            |
+| 端侧AI    | edge-ai                | e:\project\benchmark4chip\edge-ai                 |
+| 云侧AI    | cloud-ai               | e:\project\benchmark4chip\cloud-ai                |
+| 科学计算  | scientific-computing   | e:\project\benchmark4chip\scientific-computing    |
+
+## 执行命令
+```powershell
+@("ai-training", "ai-inference", "edge-ai", "cloud-ai", "scientific-computing") | ForEach-Object { New-Item -ItemType Directory -Path "e:\project\benchmark4chip\$_" -Force }
+```
+
+## 执行结果
+- 状态: 成功
+- 退出码: 0
+- 五个文件夹均已创建完成
+
+## 命名说明
+- ai-training: AI 模型训练相关基准/测试
+- ai-inference: AI 模型推理相关基准/测试
+- edge-ai: 端侧（设备本地）AI 相关
+- cloud-ai: 云侧（云端）AI 相关
+- scientific-computing: 科学计算相关

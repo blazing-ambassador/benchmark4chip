@@ -1,0 +1,16 @@
+id: openfoam-cfd
+name: OpenFOAM CFD 流体求解
+category: scientific-computing
+summary: 双精度稠密线性代数算力
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - FP64 双精度峰值算力
+  - 稠密矩阵乘阵列效率
+  - 迭代求解器访存局部性
+  - 大规模方程组存储带宽
+tags:
+  - chip-benchmark
+  - architecture-validation

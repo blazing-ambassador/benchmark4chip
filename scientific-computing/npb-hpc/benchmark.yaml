@@ -1,0 +1,16 @@
+id: npb-hpc
+name: NPB 并行 HPC 基准
+category: scientific-computing
+summary: MPI 通信与浮点算力匹配度
+status: implemented
+entrypoint: src/run.py
+requirements: requirements.txt
+output: results/benchmark_report.json
+metrics:
+  - 多进程 MPI 通信接口带宽
+  - 计算/通信重叠执行能力
+  - 浮点运算单元持续效率
+  - 并行同步开销
+tags:
+  - chip-benchmark
+  - architecture-validation
