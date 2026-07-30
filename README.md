@@ -1,6 +1,6 @@
 # Benchmark4Chip — 极简可运行负载 + 架构 proxy 指标
 
-> 面向芯片架构验证的 benchmark 集合：5 大场景、30 项负载，与 [overview.md](./overview.md) 中的硬件考察维度一一对应。
+> 面向芯片架构验证的 benchmark 集合：5 大场景、30 项负载，与 [overview.md](./overview.md) 中的硬件考察维度一一对应。（持续更新中...）
 
 ---
 
