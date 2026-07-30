@@ -28,7 +28,7 @@ benchmark4chip/
 ├── common/
 │   ├── bench_utils.py        # 全仓库共享：设备、计时、饱和拐点等
 │   └── benchmark-template/   # 新增 benchmark 模板
-├── scripts/                  # 生成、规整、冒烟脚本
+├── scripts/                  # 生成、规整
 ├── logs/                     # 搭建与实现过程记录
 ├── ai-training/              # 6 benchmarks
 ├── ai-inference/             # 6 benchmarks
